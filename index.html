@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Dealer</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a>sklep samochodowy</a>
+    </header>
+    <div>
+      <button class="offer">
+        <img src="assets/fordMustang.jpg" />
+        <b>Ford Mustang</b>
+        <a>2015, 113 000km</a>
+        <a>300 KM</a>
+        <p></p>
+        <b>50.000 PLN</b>
+        <p></p>
+      </button>
+    </div>
+    <div>
+      <button class="offer">
+        <img src="assets/audiTT.png" />
+        <b>Audi TT</b>
+        <a>1999, 259 000km</a>
+        <a>180 KM</a>
+        <p></p>
+        <b>15.000 PLN</b>
+        <p></p>
+      </button>
+    </div>
+    <div>
+      <button class="offer">
+        <img src="assets/audiA6.png" />
+        <b>Audi A6</b>
+        <a>2018, 120 000km</a>
+        <a>280 KM</a>
+        <p></p>
+        <b>50.000 PLN</b>
+        <p></p>
+      </button>
+    </div>
+    <div>
+      <button class="offer">
+        <img src="assets/mercedesMAYBACH.png" />
+        <b>Mercedes Maybach</b>
+        <a>2015, 56 641km</a>
+        <a>530 KM</a>
+        <p></p>
+        <b>315.000 PLN</b>
+        <p></p>
+      </button>
+    </div>
+
+    <form class="hidden2 hidden" id="payChoose">
+      <input type="radio" name="payChoose" />
+      <a>Leasing</a>
+      <a class="right">Cena całkowita</a>
+      <p></p>
+      <input type="radio" name="payChoose" />
+      <a>Gotówka</a>
+      <a class="right">Wybrane auto:</a>
+    </form>
+
+    <form class="hidden2 hidden">
+      <a class="inputText">Imie i nazwisko</a>
+      <input autocomplete="off" />
+      <p></p>
+      <a class="inputText">Miejsce odbioru</a>
+      <input autocomplete="off" />
+      <p></p>
+      <a class="inputText">Data odbioru</a>
+      <input type="date" autocomplete="off" />
+      <p></p>
+    </form>
+    <button class="smallButtons offer hidden">go back</button>
+    <button class="smallButtons right hidden2 hidden">zakup</button>
+    <div class="accessories hidden2 hidden">
+      <h1>Akcesoria</h1>
+      <fieldset>
+        <a>Opony zimowe:</a>
+        <a>2000.00PLN</a>
+      </fieldset>
+      <button class="smallButtons"></button>
+      <fieldset>
+        <a>Dodatkowy rok gwarancji:</a>
+        <a>5000.00PLN</a>
+      </fieldset>
+      <button class="smallButtons"></button>
+    </div>
+
+    <footer>
+      <p>Copyright by Damian Grabowski</p>
+    </footer>
+  </body>
+</html>
