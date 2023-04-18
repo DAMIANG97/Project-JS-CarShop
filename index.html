@@ -13,7 +13,7 @@
       <a>sklep samochodowy</a>
     </header>
     <div>
-      <button class="offer">
+      <button id="fordMustang" class="offer offer-btn">
         <img src="assets/fordMustang.jpg" />
         <b>Ford Mustang</b>
         <a>2015, 113 000km</a>
@@ -24,7 +24,7 @@
       </button>
     </div>
     <div>
-      <button class="offer">
+      <button id="audiTT" class="offer offer-btn">
         <img src="assets/audiTT.png" />
         <b>Audi TT</b>
         <a>1999, 259 000km</a>
@@ -35,7 +35,7 @@
       </button>
     </div>
     <div>
-      <button class="offer">
+      <button id="audiA6" class="offer offer-btn">
         <img src="assets/audiA6.png" />
         <b>Audi A6</b>
         <a>2018, 120 000km</a>
@@ -46,66 +46,67 @@
       </button>
     </div>
     <div>
-      <button class="offer">
+      <button id="mercedesMaybach" class="offer offer-btn">
         <img src="assets/mercedesMAYBACH.png" />
         <b>Mercedes Maybach</b>
         <a>2015, 56 641km</a>
         <a>530 KM</a>
         <p></p>
-        <b>315.000 PLN</b>
+        <b>350.000 PLN</b>
         <p></p>
       </button>
     </div>
 
     <form class="hidden2 hidden" id="payChoose">
-      <input type="radio" name="payChoose" />
+      <input id="leasing-radio" type="radio" name="payChoose" />
       <a>Leasing</a>
-      <a class="right">Cena całkowita</a>
+      <a id="totalprice" class="right"></a>
       <p></p>
-      <input type="radio" name="payChoose" />
+      <input id="cash-radio" type="radio" name="payChoose" />
       <a>Gotówka</a>
-      <a class="right">Wybrane auto:</a>
+      <a id="carChoose" class="right"></a>
       <p>&nbsp</p>
       <p>&nbsp</p>
       <p>&nbsp</p>
     </form>
     <form class="hidden2 hidden">
       <a class="inputText">Imie i nazwisko</a>
-      <input autocomplete="off" />
+      <input id="name" autocomplete="off" />
       <p></p>
       <a class="inputText">Miejsce odbioru</a>
-      <input autocomplete="off" />
+      <input id="place" autocomplete="off" />
       <p></p>
       <a class="inputText">Data odbioru</a>
-      <input type="date" autocomplete="off" />
+      <input id="date" type="date" autocomplete="off" />
       <p>&nbsp</p>
+      <p id="error-msg" style="color: red"></p>
     </form>
 
     <div class="hidden2 hidden accessories">
       <h1>Akcesoria</h1>
       <fieldset>
-        <a>Opony zimowe:</a>
+        <a id="wheelsAmount">Opony zimowe: 0 szt</a>
         <a>2000.00PLN</a>
-        <button class="plusMinusBt">
+        <button id="wheelMinus" class="plusMinusBt">
           <img class="plusMinusImg" src="assets/minus.png" />
         </button>
-        <button class="plusMinusBt">
+        <button id="wheelPlus" class="plusMinusBt">
           <img class="plusMinusImg" src="assets/plus.png" />
         </button>
       </fieldset>
       <fieldset>
-        <a>Dodatkowy rok gwarancji:</a>
+        <a id="guaranteeYears">Dodatkowy rok gwarancji: 0 lat</a>
         <a>5000.00PLN</a>
-        <button class="plusMinusBt">
+        <button id="guaranteeMinus" class="plusMinusBt">
           <img class="plusMinusImg" src="assets/minus.png" />
         </button>
-        <button class="plusMinusBt">
+        <button id="guaranteePlus" class="plusMinusBt">
           <img class="plusMinusImg" src="assets/plus.png" />
         </button>
       </fieldset>
     </div>
     <button class="smallButtons offer hidden">go back</button>
-    <button class="smallButtons right hidden hidden2">zakup</button>
+    <button id="buy" class="smallButtons right hidden hidden2">zakup</button>
     <footer>
       <p>Copyright by Damian Grabowski</p>
     </footer>
