@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(228, 228, 228);
+  margin: 24px;
+}
+header {
+  background-color: white;
+  border: 1px solid black;
+}
+footer {
+  background-color: lightgray;
+  text-align: center;
+  padding: 20px 16px;
+  border: 1px solid black;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+footer p {
+  margin: 0;
+}
