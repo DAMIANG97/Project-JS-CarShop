@@ -29,7 +29,6 @@ $offer.forEach((e2) => {
   });
 });
 //////////////////////////////////// go to purchase form
-ljk;
 const mustang = "Ford Mustang";
 const audiTT = "Audi TT";
 const audiA6 = "Audi A6";
@@ -131,6 +130,8 @@ $guaranteePlus.addEventListener("click", () => {
 
 /////////////////////////////////////////////////////////////////// accesories
 
+/////////////////////////////////////////////////////////////////// buy form
+
 $buy.addEventListener("click", () => {
   const nameInput = document.getElementById("name").value.trim();
   const placeInput = document.getElementById("place").value.trim();
@@ -148,9 +149,12 @@ $buy.addEventListener("click", () => {
   } else if (!leasingRadio.checked && !cashRadio.checked) {
     $errorMsg.textContent = "Error: Please select a payment method!";
   } else {
+    window.location.href = "summary.html";
     $errorMsg.textContent = "";
   }
 });
+
+///////////////////////////////////////////////////////////////////// buy form
 
 // localStorage.setItem("hiddenClass", $oferta);
 //  $oferta = localStorage.getItem("hiddenClass");
