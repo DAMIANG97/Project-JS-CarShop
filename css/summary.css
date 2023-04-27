@@ -19,3 +19,19 @@ footer {
 footer p {
   margin: 0;
 }
+button {
+  font-size: 16px;
+  padding: 16px;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: white;
+  width: 700px;
+  cursor: pointer;
+}
+
+#summaryBlock {
+  text-align: center;
+  margin: auto;
+  padding: 70px 0;
+}

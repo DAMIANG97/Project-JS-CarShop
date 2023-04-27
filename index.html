@@ -58,12 +58,12 @@
     </div>
 
     <form class="hidden2 hidden" id="payChoose">
-      <input id="leasing-radio" type="radio" name="payChoose" />
-      <a>Leasing</a>
+      <input id="cash-radio" type="radio" name="payChoose" value="Gotówka" />
+      <a>Gotówka</a>
       <a id="totalprice" class="right"></a>
       <p></p>
-      <input id="cash-radio" type="radio" name="payChoose" />
-      <a>Gotówka</a>
+      <input id="leasing-radio" type="radio" name="payChoose" value="Leasing" />
+      <a>Leasing</a>
       <a id="carChoose" class="right"></a>
       <p>&nbsp</p>
       <p>&nbsp</p>
@@ -105,7 +105,7 @@
         </button>
       </fieldset>
     </div>
-    <button class="smallButtons offer hidden">go back</button>
+    <button id="back" class="smallButtons offer hidden">go back</button>
     <button id="buy" class="smallButtons right hidden hidden2">zakup</button>
     <footer>
       <p>Copyright by Damian Grabowski</p>
