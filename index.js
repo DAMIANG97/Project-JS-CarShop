@@ -157,7 +157,6 @@ $buy.addEventListener("click", () => {
         selectedPay = radioButton.value;
         sessionStorage.setItem("SelectPay", selectedPay);
       }
-      break;
     }
   }
 });
