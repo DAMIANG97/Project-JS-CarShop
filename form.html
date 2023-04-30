@@ -28,11 +28,11 @@
       </form>
 
       <form>
-        <a class="inputText">Imie i nazwisko</a>
-        <input id="name" type="text" autocomplete="on" onkeyup="saveValue(this);" />
+        <a class="inputText">Imię i nazwisko</a>
+        <input id="nameInput" type="text" autocomplete="on" onkeyup="saveValue(this);" />
         <p></p>
         <a class="inputText">Miejsce odbioru</a>
-        <input id="place" type="text" autocomplete="on" onkeyup="saveValue(this);" />
+        <input id="placeInput" type="text" autocomplete="on" onkeyup="saveValue(this);" />
         <p></p>
         <a class="inputText">Data odbioru</a>
         <input id="date" type="date" onchange="saveValue(this);" />
@@ -45,30 +45,30 @@
         <fieldset>
           <a id="wheelsAmount">Opony zimowe: 0 szt</a>
           <a>2000.00PLN</a>
-          <button id="wheelMinus" class="plusMinusBt">
+          <button id="wheelMinusBtn" class="plusMinusBt">
             <img class="plusMinusImg" src="assets/minus.png" />
           </button>
-          <button id="wheelPlus" class="plusMinusBt">
+          <button id="wheelPlusBtn" class="plusMinusBt">
             <img class="plusMinusImg" src="assets/plus.png" />
           </button>
         </fieldset>
         <fieldset>
           <a id="guaranteeYears">Dodatkowy rok gwarancji: 0 lat</a>
           <a>5000.00PLN</a>
-          <button id="guaranteeMinus" class="plusMinusBt">
+          <button id="guaranteeMinusBtn" class="plusMinusBt">
             <img class="plusMinusImg" src="assets/minus.png" />
           </button>
-          <button id="guaranteePlus" class="plusMinusBt">
+          <button id="guaranteePlusBtn" class="plusMinusBt">
             <img class="plusMinusImg" src="assets/plus.png" />
           </button>
         </fieldset>
       </div>
 
       <button id="back" class="smallButtons BackToList">Powrót</button>
-      <button id="buy" class="smallButtons right">Zakup</button>
+      <button id="buyButton" class="smallButtons right">Zakup</button>
     </section>
 
-    <section id="summaryBlock" class="hidden">
+    <section id="summaryBlock" class="hiddenSummary">
       <h1 id="carChooseSummary"></h1>
       <p></p>
       <img id="imgSummary" src="" width="700px" />
