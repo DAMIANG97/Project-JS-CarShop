@@ -25,9 +25,9 @@ let maybach = {
   carImage: "assets/mercedesMAYBACH.png",
 };
 
-var price;
-var wheelsAmount = 0;
-var guaranteeYears = 0;
+let price = 0;
+let wheelsAmount = 0;
+let guaranteeYears = 0;
 var carName;
 var carImage;
 
@@ -45,7 +45,9 @@ $fordMustang.addEventListener("click", () => {
   price = mustang.price;
   carName = mustang.carName;
   carImage = mustang.carImage;
-  sessionStorage.setItem("Price", price);
+  localStorage.setItem("Price", price);
+  localStorage.setItem("WheelsAmount", wheelsAmount);
+  localStorage.setItem("GuaranteeYears", guaranteeYears);
   sessionStorage.setItem("CarName", carName);
   sessionStorage.setItem("CarImage", carImage);
 });
@@ -53,7 +55,9 @@ $audiTT.addEventListener("click", () => {
   price = audiTT.price;
   carName = audiTT.carName;
   carImage = audiTT.carImage;
-  sessionStorage.setItem("Price", price);
+  localStorage.setItem("Price", price);
+  localStorage.setItem("WheelsAmount", wheelsAmount);
+  localStorage.setItem("GuaranteeYears", guaranteeYears);
   sessionStorage.setItem("CarName", carName);
   sessionStorage.setItem("CarImage", carImage);
 });
@@ -61,7 +65,9 @@ $audiA6.addEventListener("click", () => {
   price = audiA6.price;
   carName = audiA6.carName;
   carImage = audiA6.carImage;
-  sessionStorage.setItem("Price", price);
+  localStorage.setItem("Price", price);
+  localStorage.setItem("WheelsAmount", wheelsAmount);
+  localStorage.setItem("GuaranteeYears", guaranteeYears);
   sessionStorage.setItem("CarName", carName);
   sessionStorage.setItem("CarImage", carImage);
 });
@@ -69,7 +75,9 @@ $mercedesMaybach.addEventListener("click", () => {
   price = maybach.price;
   carName = maybach.carName;
   carImage = maybach.carImage;
-  sessionStorage.setItem("Price", price);
+  localStorage.setItem("Price", price);
+  localStorage.setItem("WheelsAmount", wheelsAmount);
+  localStorage.setItem("GuaranteeYears", guaranteeYears);
   sessionStorage.setItem("CarName", carName);
   sessionStorage.setItem("CarImage", carImage);
 });
