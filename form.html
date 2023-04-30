@@ -15,11 +15,11 @@
 
     <section class="hiddeForm">
       <form id="payChoose">
-        <input id="CashRadio" type="radio" name="payChoose" value="Gotówka" />
+        <input id="CashRadio" type="radio" name="payChoose" value="Gotówka" onclick="saveChecked(this);" />
         <a>Gotówka</a>
         <a id="totalprice" class="right"></a>
         <p></p>
-        <input id="LeasingRadio" type="radio" name="payChoose" value="Leasing" />
+        <input id="LeasingRadio" type="radio" name="payChoose" value="Leasing" onclick="saveChecked(this);" />
         <a>Leasing</a>
         <a id="carChoose" class="right"></a>
         <p>&nbsp</p>
@@ -32,10 +32,10 @@
         <input id="name" type="text" autocomplete="on" onkeyup="saveValue(this);" />
         <p></p>
         <a class="inputText">Miejsce odbioru</a>
-        <input id="place" type="text" autocomplete="on" />
+        <input id="place" type="text" autocomplete="on" onkeyup="saveValue(this);" />
         <p></p>
         <a class="inputText">Data odbioru</a>
-        <input id="date" type="date" />
+        <input id="date" type="date" onchange="saveValue(this);" />
         <p>&nbsp</p>
         <p id="error-msg" style="color: red"></p>
       </form>
@@ -64,19 +64,19 @@
         </fieldset>
       </div>
 
-      <button id="back" class="smallButtons offer">go back</button>
-      <button id="buy" class="smallButtons right">zakup</button>
+      <button id="back" class="smallButtons BackToList">Powrót</button>
+      <button id="buy" class="smallButtons right">Zakup</button>
     </section>
 
     <section id="summaryBlock" class="hidden">
-      <h1 id="carChoose2"></h1>
+      <h1 id="carChooseSummary"></h1>
       <p></p>
-      <img id="imgSummary2" src="" width="700px" />
+      <img id="imgSummary" src="" width="700px" />
       <p></p>
-      <h2 id="totalprice2"></h2>
+      <h2 id="totalpriceSummary"></h2>
       <p></p>
-      <h2 id="payChoose2"></h2>
-      <button id="BackToList">Powrót do Zakupów</button>
+      <h2 id="payChooseSummary"></h2>
+      <button id="BackToList" class="BackToList">Powrót do Zakupów</button>
     </section>
 
     <footer>
