@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="css/form.css" />
+    <script src="form.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a>sklep samochodowy</a>
+    </header>
+
+    <section class="hiddeForm">
+      <form id="payChoose">
+        <input id="CashRadio" type="radio" name="payChoose" value="Gotówka" />
+        <a>Gotówka</a>
+        <a id="totalprice" class="right"></a>
+        <p></p>
+        <input id="LeasingRadio" type="radio" name="payChoose" value="Leasing" />
+        <a>Leasing</a>
+        <a id="carChoose" class="right"></a>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+      </form>
+
+      <form>
+        <a class="inputText">Imie i nazwisko</a>
+        <input id="name" type="text" autocomplete="on" onkeyup="saveValue(this);" />
+        <p></p>
+        <a class="inputText">Miejsce odbioru</a>
+        <input id="place" type="text" autocomplete="on" />
+        <p></p>
+        <a class="inputText">Data odbioru</a>
+        <input id="date" type="date" />
+        <p>&nbsp</p>
+        <p id="error-msg" style="color: red"></p>
+      </form>
+
+      <div class="accessories">
+        <h1>Akcesoria</h1>
+        <fieldset>
+          <a id="wheelsAmount">Opony zimowe: 0 szt</a>
+          <a>2000.00PLN</a>
+          <button id="wheelMinus" class="plusMinusBt">
+            <img class="plusMinusImg" src="assets/minus.png" />
+          </button>
+          <button id="wheelPlus" class="plusMinusBt">
+            <img class="plusMinusImg" src="assets/plus.png" />
+          </button>
+        </fieldset>
+        <fieldset>
+          <a id="guaranteeYears">Dodatkowy rok gwarancji: 0 lat</a>
+          <a>5000.00PLN</a>
+          <button id="guaranteeMinus" class="plusMinusBt">
+            <img class="plusMinusImg" src="assets/minus.png" />
+          </button>
+          <button id="guaranteePlus" class="plusMinusBt">
+            <img class="plusMinusImg" src="assets/plus.png" />
+          </button>
+        </fieldset>
+      </div>
+
+      <button id="back" class="smallButtons offer">go back</button>
+      <button id="buy" class="smallButtons right">zakup</button>
+    </section>
+
+    <section id="summaryBlock" class="hidden">
+      <h1 id="carChoose2"></h1>
+      <p></p>
+      <img id="imgSummary2" src="" width="700px" />
+      <p></p>
+      <h2 id="totalprice2"></h2>
+      <p></p>
+      <h2 id="payChoose2"></h2>
+      <button id="BackToList">Powrót do Zakupów</button>
+    </section>
+
+    <footer>
+      <p>Copyright by Damian Grabowski</p>
+    </footer>
+  </body>
+</html>
