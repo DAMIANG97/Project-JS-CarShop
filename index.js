@@ -1,4 +1,4 @@
-const $offer = document.querySelectorAll(".offer");
+const $OfferButtons = document.querySelectorAll(".OfferButtons");
 const $fordMustang = document.getElementById("fordMustang");
 const $audiTT = document.getElementById("audiTT");
 const $audiA6 = document.getElementById("audiA6");
@@ -25,14 +25,14 @@ let maybach = {
   carImage: "assets/mercedesMAYBACH.png",
 };
 
-let price = 0;
+let carPrice = 0;
 let wheelsAmount = 0;
 let guaranteeYears = 0;
-var carName;
-var carImage;
+let carName;
+let carImage;
 
 ///////////////////////////////////// go to purchase form
-$offer.forEach((e2) => {
+$OfferButtons.forEach((e2) => {
   e2.addEventListener("click", () => {
     window.location.href = "form.html";
   });
@@ -42,40 +42,40 @@ $offer.forEach((e2) => {
 ///////////////////////////////////////////////////////////////////// follow price and name
 
 $fordMustang.addEventListener("click", () => {
-  price = mustang.price;
+  carPrice = mustang.price;
   carName = mustang.carName;
   carImage = mustang.carImage;
-  localStorage.setItem("Price", price);
+  localStorage.setItem("carPrice", carPrice);
   localStorage.setItem("WheelsAmount", wheelsAmount);
   localStorage.setItem("GuaranteeYears", guaranteeYears);
   sessionStorage.setItem("CarName", carName);
   sessionStorage.setItem("CarImage", carImage);
 });
 $audiTT.addEventListener("click", () => {
-  price = audiTT.price;
+  carPrice = audiTT.price;
   carName = audiTT.carName;
   carImage = audiTT.carImage;
-  localStorage.setItem("Price", price);
+  localStorage.setItem("carPrice", carPrice);
   localStorage.setItem("WheelsAmount", wheelsAmount);
   localStorage.setItem("GuaranteeYears", guaranteeYears);
   sessionStorage.setItem("CarName", carName);
   sessionStorage.setItem("CarImage", carImage);
 });
 $audiA6.addEventListener("click", () => {
-  price = audiA6.price;
+  carPrice = audiA6.price;
   carName = audiA6.carName;
   carImage = audiA6.carImage;
-  localStorage.setItem("Price", price);
+  localStorage.setItem("carPrice", carPrice);
   localStorage.setItem("WheelsAmount", wheelsAmount);
   localStorage.setItem("GuaranteeYears", guaranteeYears);
   sessionStorage.setItem("CarName", carName);
   sessionStorage.setItem("CarImage", carImage);
 });
 $mercedesMaybach.addEventListener("click", () => {
-  price = maybach.price;
+  carPrice = maybach.price;
   carName = maybach.carName;
   carImage = maybach.carImage;
-  localStorage.setItem("Price", price);
+  localStorage.setItem("carPrice", carPrice);
   localStorage.setItem("WheelsAmount", wheelsAmount);
   localStorage.setItem("GuaranteeYears", guaranteeYears);
   sessionStorage.setItem("CarName", carName);

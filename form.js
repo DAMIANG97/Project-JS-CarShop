@@ -1,42 +1,41 @@
-var carName = sessionStorage.getItem("CarName");
-var carImage = sessionStorage.getItem("CarImage");
+let carName = sessionStorage.getItem("CarName");
+let carImage = sessionStorage.getItem("CarImage");
 const $backToList = document.querySelectorAll(".BackToList");
 
 const $hiddeform = document.querySelectorAll(".hiddeForm");
-const $hidden = document.querySelectorAll(".hidden");
-const $buy = document.getElementById("buy");
+const $hiddenSummary = document.querySelectorAll(".hiddenSummary");
+const $buyButton = document.getElementById("buyButton");
 const $errorMsg = document.getElementById("error-msg");
 const $leasingRadio = document.getElementById("LeasingRadio");
 const $cashRadio = document.getElementById("CashRadio");
-const $back = document.getElementById("back");
-const $wheelMinus = document.getElementById("wheelMinus");
-const $wheelPlus = document.getElementById("wheelPlus");
-const $guaranteeMinus = document.getElementById("guaranteeMinus");
-const $guaranteePlus = document.getElementById("guaranteePlus");
+const $wheelMinusBtn = document.getElementById("wheelMinusBtn");
+const $wheelPlusBtn = document.getElementById("wheelPlusBtn");
+const $guaranteeMinusBtn = document.getElementById("guaranteeMinusBtn");
+const $guaranteePlusBtn = document.getElementById("guaranteePlusBtn");
 let $wheelsAmount = document.getElementById("wheelsAmount");
 let $guaranteeYears = document.getElementById("guaranteeYears");
 
-document.getElementById("name").value = getSavedValue("name");
-document.getElementById("place").value = getSavedValue("place");
+document.getElementById("nameInput").value = getSavedValue("nameInput");
+document.getElementById("placeInput").value = getSavedValue("placeInput");
 document.getElementById("CashRadio").checked = getSavedValue("CashRadio");
 document.getElementById("LeasingRadio").checked = getSavedValue("LeasingRadio");
 document.getElementById("date").value = getSavedValue("date");
 
 let wheelsAmount = localStorage.getItem("WheelsAmount");
 let guaranteeYears = localStorage.getItem("GuaranteeYears");
-let price = localStorage.getItem("Price");
-$price = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${price} PLN`;
+let carPrice = localStorage.getItem("carPrice");
+$carPrice = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${carPrice} PLN`;
 $wheelsAmount = document.getElementById("wheelsAmount").innerHTML = `Opony zimowe: ${wheelsAmount} szt`;
 $guaranteeYears = document.getElementById("guaranteeYears").innerHTML = `Dodatkowy rok gwarancji ${guaranteeYears} lat`;
 $carName = document.getElementById("carChoose").innerHTML = "Wybrane auto: " + carName;
 
-$priceSummary = document.getElementById("totalpriceSummary").innerHTML = `Cena auta wraz z akcesoriami: ${price} PLN`;
+$priceSummary = document.getElementById("totalpriceSummary").innerHTML = `Cena auta wraz z akcesoriami: ${carPrice} PLN`;
 $carNameSummary = document.getElementById("carChooseSummary").innerHTML = `Gratulujemy zakupu samochodu ${carName}!`;
 document.getElementById("imgSummary").src = carImage;
 
 function saveValue(e) {
-  var id = e.id;
-  var val = e.value;
+  let id = e.id;
+  let val = e.value;
   localStorage.setItem(id, val);
 }
 
@@ -48,8 +47,8 @@ function getSavedValue(v) {
 }
 
 function saveChecked(e) {
-  var id = e.id;
-  var checked = e.checked;
+  let id = e.id;
+  let checked = e.checked;
   localStorage.setItem(id, checked);
 }
 
@@ -62,40 +61,40 @@ function getSavedChecked(v) {
 
 ////////////////////////////////////////////////////////////////// accesories
 
-$wheelMinus.addEventListener("click", () => {
-  price = price - 2000;
-  localStorage.setItem("Price", price);
-  $price = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${price} PLN`;
+$wheelMinusBtn.addEventListener("click", () => {
+  carPrice = carPrice - 2000;
+  localStorage.setItem("carPrice", carPrice);
+  $carPrice = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${carPrice} PLN`;
 
   wheelsAmount = wheelsAmount - 1;
   localStorage.setItem("WheelsAmount", wheelsAmount);
   $wheelsAmount = document.getElementById("wheelsAmount").innerHTML = `Opony zimowe: ${wheelsAmount} szt`;
 });
 
-$wheelPlus.addEventListener("click", () => {
-  price = price - -2000;
-  localStorage.setItem("Price", price);
-  $price = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${price} PLN`;
+$wheelPlusBtn.addEventListener("click", () => {
+  carPrice = carPrice - -2000;
+  localStorage.setItem("carPrice", carPrice);
+  $carPrice = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${carPrice} PLN`;
 
   wheelsAmount = wheelsAmount - -1;
   localStorage.setItem("WheelsAmount", wheelsAmount);
   $wheelsAmount = document.getElementById("wheelsAmount").innerHTML = `Opony zimowe: ${wheelsAmount} szt`;
 });
 
-$guaranteeMinus.addEventListener("click", () => {
-  price = price - 5000;
-  $price = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${price} PLN`;
-  localStorage.setItem("Price", price);
+$guaranteeMinusBtn.addEventListener("click", () => {
+  carPrice = carPrice - 5000;
+  $carPrice = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${carPrice} PLN`;
+  localStorage.setItem("carPrice", carPrice);
 
   guaranteeYears = guaranteeYears - 1;
   localStorage.setItem("GuaranteeYears", guaranteeYears);
   $guaranteeYears = document.getElementById("guaranteeYears").innerHTML = `Dodatkowy rok gwarancji ${guaranteeYears} lat`;
 });
 
-$guaranteePlus.addEventListener("click", () => {
-  price = price - -5000;
-  $price = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${price} PLN`;
-  localStorage.setItem("Price", price);
+$guaranteePlusBtn.addEventListener("click", () => {
+  carPrice = carPrice - -5000;
+  $carPrice = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${carPrice} PLN`;
+  localStorage.setItem("carPrice", carPrice);
 
   guaranteeYears = guaranteeYears - -1;
   localStorage.setItem("GuaranteeYears", guaranteeYears);
@@ -104,17 +103,17 @@ $guaranteePlus.addEventListener("click", () => {
 /////////////////////////////////////////////////////////////////// accesories
 
 /////////////////////////////////////////////////////////////////// buy button
-$buy.addEventListener("click", () => {
-  const nameInput = document.getElementById("name").value.trim();
-  const placeInput = document.getElementById("place").value.trim();
+$buyButton.addEventListener("click", () => {
+  const nameInput = document.getElementById("nameInput").value.trim();
+  const placeInput = document.getElementById("placeInput").value.trim();
   const dateInput = document.getElementById("date").value;
 
   if (nameInput.length === 0 || placeInput.length === 0 || dateInput.length === 0) {
-    $errorMsg.textContent = "Error: All fields are required!";
+    $errorMsg.textContent = "Błąd: Należy wypełnić wszystkie pola!";
   } else if (nameInput.split(" ").length !== 2) {
-    $errorMsg.textContent = "Error: Name field must contain two strings separated by a space!";
+    $errorMsg.textContent = "Błąd: Pole Imię i nazwisko musi zawierać imię i nazwisko odzielone spacją!";
   } else if (!$leasingRadio.checked && !$cashRadio.checked) {
-    $errorMsg.textContent = "Error: Please select a payment method!";
+    $errorMsg.textContent = "Błąd: Proszę wybrać metodę płatności!";
   } else {
     $errorMsg.textContent = "";
     const $radioButtons = document.querySelectorAll('input[name="payChoose"]');
@@ -123,12 +122,12 @@ $buy.addEventListener("click", () => {
         $selectPaySummary = document.getElementById("payChooseSummary").innerHTML = `Wybrana metoda płatności: ${radioButton.value}.`;
       }
     }
-    $price2 = document.getElementById("totalpriceSummary").innerHTML = `Cena auta wraz z akcesoriami: ${price} PLN`;
+    $priceSummary = document.getElementById("totalpriceSummary").innerHTML = `Cena auta wraz z akcesoriami: ${carPrice} PLN`;
     $hiddeform.forEach((e2) => {
-      e2.classList.toggle("hidden");
+      e2.classList.toggle("hiddenSummary");
     });
-    $hidden.forEach((e1) => {
-      e1.classList.toggle("hidden");
+    $hiddenSummary.forEach((e1) => {
+      e1.classList.toggle("hiddenSummary");
     });
   }
 });
