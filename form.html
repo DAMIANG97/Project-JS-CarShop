@@ -13,20 +13,20 @@
       <a>Auto Giełda</a>
     </header>
     <p></p>
-    <section class="inputs hiddeForm">
-      <form id="payChoose">
+    <section class="inputsAccesories hiddeForm">
+      <form class="inputsAccesories" id="payChoose">
         <h1>Forma płatności:</h1>
-        <input id="CashRadio" type="radio" name="payChoose" value="Gotówka" onclick="saveChecked(this);" />
-        <a>Gotówka</a>
-        <b id="totalprice" class="right"></b>
+        <input class="RadioButtons" id="CashRadio" type="radio" name="payChoose" value="Gotówka" onclick="saveChecked(this);" />
+        <a class="inputText">Gotówka</a>
+        <b id="totalprice" class="right inputText"></b>
         <p></p>
-        <input id="LeasingRadio" type="radio" name="payChoose" value="Leasing" onclick="saveChecked(this);" />
-        <a>Leasing</a>
-        <b id="carChoose" class="right"></b>
+        <input class="RadioButtons" id="LeasingRadio" type="radio" name="payChoose" value="Leasing" onclick="saveChecked(this);" />
+        <a class="inputText">Leasing</a>
+        <b id="carChoose" class="right inputText"></b>
         <p>&nbsp</p>
       </form>
 
-      <form class="inputs">
+      <form class="inputsAccesories">
         <h1>Dane:</h1>
         <a class="inputText">Imię i nazwisko</a>
         <input id="nameInput" type="text" autocomplete="on" onkeyup="saveValue(this);" />
