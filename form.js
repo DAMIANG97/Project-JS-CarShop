@@ -66,13 +66,15 @@ function getSavedChecked(v) {
 ////////////////////////////////////////////////////////////////// accesories
 
 $wheelMinusBtn.addEventListener("click", () => {
-  carPrice = carPrice - 2000;
-  localStorage.setItem("carPrice", carPrice);
-  $carPrice = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${carPrice} PLN`;
+  if (wheelsAmount > 0) {
+    carPrice = carPrice - 2000;
+    localStorage.setItem("carPrice", carPrice);
+    $carPrice = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${carPrice} PLN`;
 
-  wheelsAmount = wheelsAmount - 1;
-  localStorage.setItem("WheelsAmount", wheelsAmount);
-  $wheelsAmount = document.getElementById("wheelsAmount").innerHTML = `Opony zimowe: ${wheelsAmount} szt`;
+    wheelsAmount = wheelsAmount - 1;
+    localStorage.setItem("WheelsAmount", wheelsAmount);
+    $wheelsAmount = document.getElementById("wheelsAmount").innerHTML = `Opony zimowe: ${wheelsAmount} szt`;
+  }
 });
 
 $wheelPlusBtn.addEventListener("click", () => {
@@ -86,13 +88,15 @@ $wheelPlusBtn.addEventListener("click", () => {
 });
 
 $guaranteeMinusBtn.addEventListener("click", () => {
-  carPrice = carPrice - 5000;
-  $carPrice = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${carPrice} PLN`;
-  localStorage.setItem("carPrice", carPrice);
+  if (guaranteeYears > 0) {
+    carPrice = carPrice - 5000;
+    $carPrice = document.getElementById("totalprice").innerHTML = `Cena całkowita: ${carPrice} PLN`;
+    localStorage.setItem("carPrice", carPrice);
 
-  guaranteeYears = guaranteeYears - 1;
-  localStorage.setItem("GuaranteeYears", guaranteeYears);
-  $guaranteeYears = document.getElementById("guaranteeYears").innerHTML = `Dodatkowy rok gwarancji ${guaranteeYears} lat`;
+    guaranteeYears = guaranteeYears - 1;
+    localStorage.setItem("GuaranteeYears", guaranteeYears);
+    $guaranteeYears = document.getElementById("guaranteeYears").innerHTML = `Dodatkowy rok gwarancji ${guaranteeYears} lat`;
+  }
 });
 
 $guaranteePlusBtn.addEventListener("click", () => {
