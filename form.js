@@ -33,6 +33,10 @@ $priceSummary = document.getElementById("totalpriceSummary").innerHTML = `Cena a
 $carNameSummary = document.getElementById("carChooseSummary").innerHTML = `Gratulujemy zakupu samochodu ${carName}!`;
 document.getElementById("imgSummary").src = carImage;
 
+let twoweeks = new Date();
+twoweeks.setDate(twoweeks.getDate() + 14);
+date.min = new Date(twoweeks).toISOString().split("T")[0];
+
 function saveValue(e) {
   let id = e.id;
   let val = e.value;
