@@ -6,8 +6,10 @@ const $hiddeform = document.querySelectorAll(".hiddeForm");
 const $hiddenSummary = document.querySelectorAll(".hiddenSummary");
 const $buyButton = document.getElementById("buyButton");
 const $errorMsg = document.getElementById("error-msg");
-const $leasingRadio = document.getElementById("LeasingRadio");
-const $cashRadio = document.getElementById("CashRadio");
+let $leasingRadio = document.getElementById("LeasingRadio");
+let $cashRadio = document.getElementById("CashRadio");
+const radioButtons = document.getElementsByName("payChoose");
+const selectedValue = localStorage.getItem("selectedRadioButton");
 const $wheelMinusBtn = document.getElementById("wheelMinusBtn");
 const $wheelPlusBtn = document.getElementById("wheelPlusBtn");
 const $guaranteeMinusBtn = document.getElementById("guaranteeMinusBtn");
@@ -17,8 +19,6 @@ let $guaranteeYears = document.getElementById("guaranteeYears");
 
 document.getElementById("nameInput").value = getSavedValue("nameInput");
 document.getElementById("placeInput").value = getSavedValue("placeInput");
-document.getElementById("CashRadio").checked = getSavedValue("CashRadio");
-document.getElementById("LeasingRadio").checked = getSavedValue("LeasingRadio");
 document.getElementById("date").value = getSavedValue("date");
 
 let wheelsAmount = localStorage.getItem("WheelsAmount");
@@ -33,10 +33,13 @@ $priceSummary = document.getElementById("totalpriceSummary").innerHTML = `Cena a
 $carNameSummary = document.getElementById("carChooseSummary").innerHTML = `Gratulujemy zakupu samochodu ${carName}!`;
 document.getElementById("imgSummary").src = carImage;
 
+////////////////////////////////////////////////////////////////// form date
 let twoweeks = new Date();
 twoweeks.setDate(twoweeks.getDate() + 14);
 date.min = new Date(twoweeks).toISOString().split("T")[0];
+////////////////////////////////////////////////////////////////// form date
 
+////////////////////////////////////////////////////////////////// localStorage for form (date & text)
 function saveValue(e) {
   let id = e.id;
   let val = e.value;
@@ -49,22 +52,26 @@ function getSavedValue(v) {
   }
   return localStorage.getItem(v);
 }
+////////////////////////////////////////////////////////////////// localStorage for form (date & text)
 
-function saveChecked(e) {
-  let id = e.id;
-  let checked = e.checked;
-  localStorage.setItem(id, checked);
-}
-
-function getSavedChecked(v) {
-  if (!localStorage.getItem(v)) {
-    return "";
+////////////////////////////////////////////////////////////////// localStorage for form (radioButtons)
+if (selectedValue) {
+  for (let i = 0; i < radioButtons.length; i++) {
+    if (radioButtons[i].value === selectedValue) {
+      radioButtons[i].checked = true;
+      break;
+    }
   }
-  return localStorage.getItem(v);
 }
+
+for (let i = 0; i < radioButtons.length; i++) {
+  radioButtons[i].addEventListener("change", function () {
+    localStorage.setItem("selectedRadioButton", this.value);
+  });
+}
+////////////////////////////////////////////////////////////////// localStorage for form (radioButtons)
 
 ////////////////////////////////////////////////////////////////// accesories
-
 $wheelMinusBtn.addEventListener("click", () => {
   if (wheelsAmount > 0) {
     carPrice = carPrice - 2000;
