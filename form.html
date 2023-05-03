@@ -16,11 +16,11 @@
     <section class="inputsAccesories hiddeForm">
       <form class="inputsAccesories" id="payChoose">
         <h1>Forma płatności:</h1>
-        <input class="RadioButtons" id="CashRadio" type="radio" name="payChoose" value="Gotówka" onclick="saveChecked(this);" />
+        <input class="RadioButtons" id="CashRadio" type="radio" name="payChoose" value="Gotówka" />
         <a class="inputText">Gotówka</a>
         <b id="totalprice" class="right inputText"></b>
         <p></p>
-        <input class="RadioButtons" id="LeasingRadio" type="radio" name="payChoose" value="Leasing" onclick="saveChecked(this);" />
+        <input class="RadioButtons" id="LeasingRadio" type="radio" name="payChoose" value="Leasing" />
         <a class="inputText">Leasing</a>
         <b id="carChoose" class="right inputText"></b>
         <p>&nbsp</p>
@@ -41,7 +41,7 @@
       </form>
 
       <div class="accessories">
-        <h1>Akcesoria</h1>
+        <h1>Akcesoria:</h1>
         <fieldset>
           <a id="wheelsAmount">Opony zimowe: 0 szt</a>
           <a>2000.00PLN</a>
@@ -52,6 +52,7 @@
             <img class="plusMinusImg" src="assets/plus.png" />
           </button>
         </fieldset>
+        <p></p>
         <fieldset>
           <a id="guaranteeYears">Dodatkowy rok gwarancji: 0 lat</a>
           <a>5000.00PLN</a>
